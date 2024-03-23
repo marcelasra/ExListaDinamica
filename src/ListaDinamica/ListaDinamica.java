@@ -51,7 +51,6 @@ public class ListaDinamica {
         }
     }
 
-
     public boolean ehVazia() {
         return ((this.inicio == null) && (this.fim == null));
     }
@@ -72,5 +71,34 @@ public class ListaDinamica {
         } else {
             insereFinal(valor);
         }
+    }
+
+    public void removeMeio(int pos) {
+        No aux = this.inicio; //define o inicio como aux
+
+        for (int i = 1; i < pos; i++) { //encontrou o aux //i é o contador
+            aux = aux.getProximo();
+        }
+        No prox = aux.getProximo(); //o aux vira o prox
+        aux.setProximo(prox.getProximo());
+        prox = null;
+    }
+
+    public void removeInicio() {
+        No aux = this.inicio;
+        this.inicio = aux.getProximo();
+        aux = null;
+    }
+
+    public void removeFinal() {
+        No aux = this.inicio;
+
+        for (int i = 1; i < (tamanho() - 1); i++) {
+            aux = aux.getProximo();
+        }
+        No prox = aux.getProximo();
+        aux.setProximo(null);
+        this.fim = aux;
+        prox = null;
     }
 }

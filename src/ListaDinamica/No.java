@@ -6,6 +6,7 @@ public class No {
    
    public No(double valor){
        this.valor = valor;
+       this.proximo = null;
    }
 
     public double getValor() {
