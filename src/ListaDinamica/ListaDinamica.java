@@ -8,6 +8,7 @@ public class ListaDinamica {
     public ListaDinamica() {
         this.inicio = null;
         this.fim = null;
+
     }
 
     public void inserePrimeiroElemento(double valor) {
@@ -47,6 +48,29 @@ public class ListaDinamica {
 
             System.out.println(aux.getValor());
             aux = aux.getProximo();
+        }
+    }
+
+
+    public boolean ehVazia() {
+        return ((this.inicio == null) && (this.fim == null));
+    }
+
+    public int tamanho() {
+        int tamanho = 0;
+        No aux = this.inicio;
+        while (aux != null) {
+            tamanho++;
+            aux = aux.getProximo();
+        }
+        return tamanho;
+    }
+
+    public void insere(double valor) {
+        if (ehVazia()) {
+            inserePrimeiroElemento(valor);
+        } else {
+            insereFinal(valor);
         }
     }
 }
