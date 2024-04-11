@@ -173,7 +173,7 @@ public class ListaDinamica {
             return null;
         } else {
             No aux = this.inicio;
-            for (int i = 1; i <= pos , i++){
+            for (int i = 1; i <= pos ; i++){
                 aux = aux.getProximo();
             }
             return aux.getValor();
